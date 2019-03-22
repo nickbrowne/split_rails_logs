@@ -47,7 +47,7 @@ log
 
 If you're using something like buildkite, [configure it to upload all artifacts that match the appropriate pattern](https://buildkite.com/docs/pipelines/artifacts), for example:
 
-```
+```yaml
 - label: "Unit specs"
   command: "bin/ci-unit"
   artifact_paths: ["log/spec/**/*.test.log"]
