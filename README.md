@@ -31,12 +31,29 @@ end
 `for_failed` will only write out logs for examples that have failed. If you want split logs for everything, you can instead use `for_any`:
 
 ```rb
-RSpec.configure do |config|
-  config.around do |example|
-    SplitRailsLogs.for_any(example)
-  end
-end
+SplitRailsLogs.for_any(example)
 ```
+
+You'll now end up with a separate Rails log per example:
+```
+log
+├── spec
+│   └── events
+│       └── user
+│           ├── locked_spec.rb:12.test.log
+│           ├── locked_spec.rb:25.test.log
+│           └── unlocked_spec.rb:33.test.log
+```
+
+If you're using something like buildkite, [configure it to upload all artifacts that match the appropriate pattern](https://buildkite.com/docs/pipelines/artifacts), for example:
+
+```
+- label: "Unit specs"
+  command: "bin/ci-unit"
+  artifact_paths: ["log/spec/**/*.test.log"]
+```
+
+Various other CI platforms will have similar configurations available.
 
 ## License
 
