@@ -8,6 +8,6 @@ spec = Gem::Specification.new do |s|
 
   s.files = `git ls-files -- lib/*`.split("\n")
 
-  s.add_dependency 'activesupport', '>= 5.0'
-  s.add_development_dependency 'rspec'
+  s.add_dependency 'activesupport', '~> 5.0'
+  s.add_development_dependency 'rspec', '~> 3'
 end
