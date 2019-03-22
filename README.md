@@ -55,6 +55,14 @@ If you're using something like buildkite, [configure it to upload all artifacts 
 
 Various other CI platforms will have similar configurations available.
 
+## Developing
+
+Stick with [semver](https://semver.org/). Keep the tests green 🙂
+
+```
+bundle exec rspec
+```
+
 ## License
 
 MIT
