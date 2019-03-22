@@ -35,8 +35,8 @@ class SplitRailsLogs
 
     example.call
 
-    log_file_suffix = "_line_#{example.metadata[:line_number]}.test.log"
-    log_path = Rails.root.join("log").join(example.metadata[:file_path].sub(".rb", log_file_suffix))
+    log_file_suffix = ":#{example.metadata[:line_number]}.test.log"
+    log_path = Rails.root.join("log").join(example.metadata[:file_path] + log_file_suffix)
 
     yield log_path, @io.string, example.exception
   end

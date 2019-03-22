@@ -4,7 +4,7 @@ require "logger"
 
 RSpec.describe SplitRailsLogs do
   let(:example) { double(call: nil, metadata: { file_path: "spec/example_spec.rb", line_number: 123 }) }
-  let(:expected_pathname) { Pathname.new("foo/log/spec/example_spec_line_123.test.log") }
+  let(:expected_pathname) { Pathname.new("foo/log/spec/example_spec.rb:123.test.log") }
 
   before do
     stub_const("Rails", double(
