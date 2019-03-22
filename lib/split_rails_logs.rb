@@ -1,6 +1,7 @@
 require "active_support"
-require "stringio"
 require "fileutils"
+require "logger"
+require "stringio"
 
 class SplitRailsLogs
   # Write out logs for each example
