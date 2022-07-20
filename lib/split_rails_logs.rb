@@ -1,6 +1,5 @@
 require "active_support"
 require "fileutils"
-require "logger"
 require "stringio"
 
 class SplitRailsLogs
@@ -24,7 +23,7 @@ class SplitRailsLogs
     # reusing the io and logger instances each time prevents
     # runaway memory usage
     @io ||= StringIO.new
-    @logger ||= Logger.new(@io).tap do |logger|
+    @logger ||= ActiveSupport::Logger.new(@io).tap do |logger|
       Rails.logger.extend(ActiveSupport::Logger.broadcast(logger))
     end
 
