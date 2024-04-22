@@ -24,7 +24,7 @@ class SplitRailsLogs
     # runaway memory usage
     @io ||= StringIO.new
     @logger ||= ActiveSupport::Logger.new(@io).tap do |logger|
-      Rails.logger.extend(ActiveSupport::Logger.broadcast(logger))
+      Rails.logger = ActiveSupport::BroadcastLogger.new(Rails.logger, logger)
     end
 
     # beause we're reusing the same io and logger

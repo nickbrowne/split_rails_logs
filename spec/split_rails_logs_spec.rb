@@ -10,6 +10,7 @@ RSpec.describe SplitRailsLogs do
     stub_const("Rails", double(
       root: Pathname.new("foo"),
       logger: Logger.new(nil),
+      "logger=": nil,
       initialized?: true,
     ))
   end
