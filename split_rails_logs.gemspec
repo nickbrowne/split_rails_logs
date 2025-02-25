@@ -8,7 +8,7 @@ spec = Gem::Specification.new do |s|
 
   s.files = `git ls-files -- lib/*`.split("\n")
 
-  s.required_ruby_version = '>= 2.7'
+  s.required_ruby_version = '>= 3.3'
 
   s.add_dependency 'activesupport', '>= 7.1', '< 9'
   s.add_development_dependency 'rspec', '~> 3'
