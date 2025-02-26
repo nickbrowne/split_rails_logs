@@ -1,4 +1,4 @@
-# SplitRailsLogs [![Build Status](https://travis-ci.org/nickbrowne/split_rails_logs.svg?branch=master)](https://travis-ci.org/nickbrowne/split_rails_logs)
+# SplitRailsLogs ![Build Status](https://github.com/nickbrowne/split_rails_logs/actions/workflows/test.yml/badge.svg?branch=master)
 
 Splits rails logs into separate files for each RSpec example, allowing much easier debugging without having to sift through one file containing everything.
 
