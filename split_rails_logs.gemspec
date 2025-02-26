@@ -1,6 +1,6 @@
 spec = Gem::Specification.new do |s|
   s.name = 'split_rails_logs'
-  s.version = '2.0.0'
+  s.version = '3.0.0'
   s.licenses = ['MIT']
   s.summary = 'Split Rails logs across RSpec examples'
   s.authors = ["Nick Browne"]
